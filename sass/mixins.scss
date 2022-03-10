@@ -1,0 +1,168 @@
+@mixin flex-box-global
+{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+    flex-direction: column;
+}
+@mixin localisation {
+    display: flex;
+    justify-content: center;
+    background-color: $background-localisation;
+    padding: 25px;
+    box-shadow: inset 0px 14px 14px -9px rgba(0,0,0,0.26);
+        & .fa-map-marker-alt {
+            font-family: "Font Awesome 5 Free";
+            content: "\f3c5";
+            font-weight: 900;
+            color: #4e4a4a;
+            margin-right: 10px;
+        }
+        & ::placeholder {
+            background-color: $background-localisation;
+            color: #4e4a4a;
+            outline: none;
+        }
+        & input {
+            outline-width: 0;
+            border: 0;
+            padding: 0;
+        }
+    
+}
+@mixin numero {
+    align-items: center;
+    background: $color-primary;
+    border-radius: 30px;
+    color: #f6f6f6;
+    display: flex;
+    font-size: 18px;
+    font-weight: 500;
+    justify-content: center;
+    margin-left: -13px;
+    width: 24px;
+    height: 24px;
+}
+@mixin protocole {
+    align-items: center;
+    background-color: #f6f6f6;
+    color: black;
+    border-radius: 20px;
+    box-shadow: 3px 2px 5px #818181;
+    cursor: pointer;
+    font-size: 20px;
+    height: 65px;
+    width: 100%;
+    &:hover {
+        background-color: #ece1f9;
+        transition-delay: 250ms;
+            & .fas {
+                color: $color-primary; 
+                font-size: 16px;
+                padding-left: 20px;
+                padding-right: 10px;  
+                transition-delay: 250ms;
+        }
+    }
+}
+@mixin card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow:0px 1px 8px 0px rgba(0,0,0,0.53);
+    & .restaurant__card--img > img {
+        width: 100%;
+        height: 175px;
+        object-fit: cover;
+    }
+
+}
+@mixin nouveau {
+    background-color: $color-tertiary;
+    color: #008766;
+    font-weight: bold;
+    position: absolute;
+    padding-left: 15px;
+    padding-right: 15px;
+    right: 14px;
+    top: 14px;
+    line-height: 1px;
+    border-radius: 2px;
+}
+@mixin label {
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+@mixin label_info {
+    color: black;
+    font-family: $txt_police;
+        & .restaurant__label--name{
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 0.5;
+        }
+        & .restaurant__label--ville{
+            line-height: 0.5;
+            font-weight: 100;
+        }
+}
+@mixin heart {
+    font-size: 25px;
+    & .restaurant__label--info + .restaurant__label--heart {
+        display: flex;
+        flex-direction: row; 
+        position: relative;
+    }
+    & i.far.fa-heart::before {
+        font-size: 30px;
+        color: black;
+        display: initial;
+        background: white;
+        position: absolute;
+        left: 33px;
+        right: 45px;
+        bottom: 10px;
+    }
+    & i.far.fa-heart:hover {
+        transition: opacity .1s ease;
+        opacity: 0;      
+    }
+    & i.fas.fa-heart::before {
+        font-size: 30px;
+        background: rgb(2, 0, 36);
+        background: -webkit-gradient(linear, left top, left bottom, from($color-primary), to($color-secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: initial;
+        position: absolute;
+        left: 33px;
+        right: 45px;
+        bottom: 10px;
+    }
+}
+@mixin tablette
+{
+	@media all and (min-width:map-get($breakpoints,tablette))
+	{
+		@content;
+	}
+}
+@mixin mobile
+{
+	@media all and (max-width:map-get($breakpoints,mobile))
+	{
+		@content;
+	}
+}
+@mixin pc
+{
+	@media all and (min-width:map-get($breakpoints,pc)) and (orientation:landscape)
+	{
+		@content;
+	}
+}
