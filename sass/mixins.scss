@@ -5,6 +5,135 @@
 	justify-content:center;
     flex-direction: column;
 }
+@mixin loading {
+    animation: stop 2.4s forwards ease-in-out;
+    margin-top: -21px;
+    z-index: 1000;
+    position: fixed;
+    background-color: #363636;
+    width: 100%;
+    height: 100vh;
+    & .group__loading__spinner {
+        animation: beat .8s infinite;
+        width: fit-content;
+        margin: 0 auto;
+        margin-top:40vh;
+        transform: translateY(-50%);
+    }
+    & .fas {
+        display: flex;
+        justify-content: center;
+        font-size: 130px;
+        color: white;
+    }
+    & .loading__spinner--title {
+        display: flex;
+        justify-content: center;
+        font-family: $title-omf;
+        color: white;
+    }
+}
+@keyframes stop {
+    0% {
+        opacity: 1;
+    }
+    99.99% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes beat {
+    0% {
+        transform: scale(1);
+      }
+      25% {
+        transform: scale(1.1);
+      }
+      40% {
+        transform: scale(1);
+      }
+      60% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    // 0%{
+    //     opacity: 1;
+    // }
+    // 60%{
+    //     opacity: .85;
+    // }
+    // 75%{
+    //     opacity: .60;
+    // }
+    // 85%{
+    //     opacity: .30;
+    // }
+    // 95%{
+    //     opacity: .4;
+    // }
+    // 100%{
+    //     opacity: 0;
+    //     visibility: hidden;
+    // }
+}
+/*	.progress__icon {
+		width: 50vw;
+		height: 2vw;
+		padding: 0.25rem;
+		margin-bottom: 30px;
+		&__fas {
+			height: 100%;
+			background: red;
+			height: 100%;
+			transform-origin: bottom;
+			transform: scaleX(0.5);
+            animation: progress__icon;
+		}
+}
+@keyframes progress__icon {
+    0% {
+        transform: scaleX(0);
+    }
+    17% {
+		transform: scaleX(0.18);
+	}
+	24% {
+		transform: scaleX(0.4);
+		animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+	}
+	46% {
+		transform: scaleX(0.81);
+		animation-timing-function: cubic-bezier(0.25, 0.25, 1);
+	}
+	100% {
+		transform: scaleX(1);
+	}    
+}*/
+/*@keyframes loading__title {
+    0%{
+        opacity: 1;
+    }
+    60%{
+        opacity: .85;
+    }
+    75%{
+        opacity: .60;
+    }
+    85%{
+        opacity: .30;
+    }
+    95%{
+        opacity: .4;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}*/
 @mixin localisation {
     display: flex;
     justify-content: center;
@@ -55,13 +184,13 @@
     width: 100%;
     &:hover {
         background-color: #ece1f9;
-        transition-delay: 250ms;
+        transition: 350ms;
             & .fas {
                 color: $color-primary; 
                 font-size: 16px;
                 padding-left: 20px;
                 padding-right: 10px;  
-                transition-delay: 250ms;
+                transition: 350ms;
         }
     }
 }
@@ -71,6 +200,7 @@
     justify-content: center;
     border-radius: 20px;
     background-color: white;
+    position: relative;
     overflow: hidden;
     box-shadow:0px 1px 8px 0px rgba(0,0,0,0.53);
     & .restaurant__card--img > img {
@@ -118,21 +248,20 @@
         flex-direction: row; 
         position: relative;
     }
-    & i.far.fa-heart::before {
+    & i.far.fa-heart {
         font-size: 30px;
         color: black;
         display: initial;
         background: white;
         position: absolute;
-        left: 33px;
-        right: 45px;
-        bottom: 10px;
+        right: 20px;
+        bottom: 20px;
     }
     & i.far.fa-heart:hover {
-        transition: opacity .1s ease;
+        transition: opacity 350ms ease;
         opacity: 0;      
     }
-    & i.fas.fa-heart::before {
+    & i.fas.fa-heart {
         font-size: 30px;
         background: rgb(2, 0, 36);
         background: -webkit-gradient(linear, left top, left bottom, from($color-primary), to($color-secondary));
@@ -140,10 +269,51 @@
         -webkit-text-fill-color: transparent;
         display: initial;
         position: absolute;
-        left: 33px;
-        right: 45px;
-        bottom: 10px;
+        right: 20px;
+        bottom: 20px;
     }
+}
+@mixin heart_menu {
+    font-size: 25px;
+    & .menu__title + .menu__heart {
+        display: flex;
+        flex-direction: row; 
+        position: relative;
+    }
+    & i.far.fa-heart {
+        font-size: 30px;
+        color: black;
+        display: initial;
+        background: transparent;
+        position: absolute;
+        right: 20px;
+        background: white;
+    }
+    & i.far.fa-heart:hover {
+        transition: opacity 350ms ease;
+        opacity: 0;      
+    }
+    & i.fas.fa-heart {
+        font-size: 30px;
+        background: rgb(2, 0, 36);
+        background: -webkit-gradient(linear, left top, left bottom, from($color-primary), to($color-secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: initial;
+        position: absolute;
+        right: 20px;
+    }
+}
+@mixin card_menu {
+    align-items: center;
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    box-shadow: 3px 2px 5px #818181;
+    cursor: pointer;
+    font-size: 20px;
+    width: 100%;
+    margin-bottom: 12px;
 }
 @mixin tablette
 {

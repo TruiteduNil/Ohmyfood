@@ -7,7 +7,9 @@ $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 $gradient : linear-gradient(180deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
-
+.container__loading__spinner {
+    @include loading;
+}
 .header__logo {
     font-family: $title-omf;
     display: flex;
@@ -37,14 +39,17 @@ body {
 
 }
 .container__fonction {
-    @include mobile {
     margin-left: 25px;
     margin-right: 25px
-    }
 }
 .fonction__protocole {
-    @include flex-box-global; 
+    @include flex-box-global;
     background-color: white; 
+    @include tablette{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
 }
 .fonction__protocole--icon > .fas {
     color: #4e4a4a; 
@@ -61,6 +66,9 @@ body {
         font-weight: bold;
         padding-left: 21px;
     }
+    @include tablette {
+        margin-right: 22px;
+    }
 }
 .fonction__protocole--2 {
     @include protocole;
@@ -72,6 +80,9 @@ body {
         font-size: 17px;
         font-weight: bold;
         padding-left: 15px;
+    }
+    @include tablette {
+        margin-right: 22px;
     }
 }
 .fonction__protocole--3 {
@@ -119,6 +130,15 @@ button {
     margin-right: 20px;
         & a {
             text-decoration: none;
+            @include tablette {
+                flex-basis: 40%;
+                margin: 1em 0;
+            }
+        }
+        @include tablette {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
         }
 }
 .restaurant__card {

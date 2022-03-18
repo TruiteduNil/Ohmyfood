@@ -1,0 +1,50 @@
+.header__logo > a{
+    text-decoration: none;
+    color: black;
+}
+.container__image {
+    display: block;
+    position: relative;
+    z-index: -1;
+    & img {
+        width: 100%;
+    }
+}
+.container__menu {
+    background-color: $background-other;
+    z-index: 1;
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+    margin-top: -3em;
+    & .menu {
+        padding-top: 10px;
+        margin-left: 17px;
+        margin-right: 17px;
+    }
+}
+.menu__name__resto {
+    font-family: $title-omf;;
+}
+.menu__block--info {
+    @include card_menu;
+    line-height: 0.4;
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    .menu__block--price--meal {
+        margin: 0 3px -8px auto;
+    }
+    .menu__block--title--contain {
+        margin-left: 13px;
+    }
+}
+.menu__heart {
+    @include heart_menu
+}
+.menu__block--title {
+    font-size: 16px;
+    color: #4e4a4a;
+    border-bottom: 3px solid $color-tertiary;
+    width: 8%;
+    line-height: 31px;
+}
