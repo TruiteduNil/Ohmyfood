@@ -1,6 +1,11 @@
 .header__logo > a{
     text-decoration: none;
     color: black;
+    & .header__logo .header__arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 .container__image {
     display: block;
@@ -48,3 +53,69 @@
     width: 8%;
     line-height: 31px;
 }
+i.fas.fa-arrow-left::before {
+    color: black;
+    margin-left: 30px;
+}
+.menu__block--info:hover .menu__block--confirm {
+    animation: woosh .4s forwards;
+}
+.menu__block--info:hover .menu__block--confirm i {
+    animation: kipu .4s forwards;
+}
+.menu__block--confirm {
+    width: 0px;
+    overflow: hidden;
+}
+@keyframes woosh {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 50px;
+    }
+}
+@keyframes kipu {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.menu__block--confirm {
+    background-color: $color-tertiary;
+    position: relative;
+    height: 100%;
+    margin-left: 1em;
+    width: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    & .menu__block--confirm:hover {
+    width: 100%;
+    }
+}    
+.menu__block--confirm  i {
+    color: white;
+    font-size: 2em;
+    margin-left: 10px;
+    & .menu__block--confirm i:hover {
+        transform: rotate(360deg);
+        transition: 400ms ease-in-out;
+    }
+}    
+.menu__block--info {
+		animation: fadein 800ms 200ms ease-in-out both;
+    }
+@keyframes fadein{
+	0%{
+	opacity: 0;
+	transform: translateY(20px);
+	}
+  100%{
+	opacity: 1;
+	transform: translateY(0);
+  }
+}  
