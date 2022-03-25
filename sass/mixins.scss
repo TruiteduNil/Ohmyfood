@@ -8,7 +8,6 @@
 @mixin loading {
     animation: stop 2.4s forwards ease-in-out;
     margin-top: -21px;
-    z-index: 1000;
     position: fixed;
     background-color: #363636;
     width: 100%;
@@ -39,9 +38,11 @@
     }
     99.99% {
         opacity: 1;
+        z-index: 10;
     }
     100% {
         opacity: 0;
+        z-index: -3;
     }
 }
 @keyframes beat {
@@ -287,7 +288,7 @@
         background: transparent;
         position: absolute;
         right: 20px;
-        background: white;
+        background: #f2f2f2;
     }
     & i.far.fa-heart:hover {
         transition: opacity 350ms ease;

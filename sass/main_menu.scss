@@ -58,16 +58,17 @@ i.fas.fa-arrow-left::before {
     margin-left: 30px;
 }
 .menu__block--info:hover .menu__block--confirm {
-    animation: woosh .4s forwards;
+    animation: slide_left .4s forwards;
+    animation-direction: alternate;
 }
 .menu__block--info:hover .menu__block--confirm i {
-    animation: kipu .4s forwards;
+    animation: rotation_validity .4s forwards;
 }
 .menu__block--confirm {
     width: 0px;
     overflow: hidden;
 }
-@keyframes woosh {
+@keyframes slide_left {
     0% {
         width: 0px;
     }
@@ -75,7 +76,7 @@ i.fas.fa-arrow-left::before {
         width: 50px;
     }
 }
-@keyframes kipu {
+@keyframes rotation_validity {
     0% {
         transform: rotate(0deg);
     }
@@ -105,11 +106,15 @@ i.fas.fa-arrow-left::before {
         transform: rotate(360deg);
         transition: 400ms ease-in-out;
     }
-}    
-.menu__block--info {
-		animation: fadein 800ms 200ms ease-in-out both;
+} 
+@for $i from 1 through 3 {
+    $temps: 500*$i;
+    .menu__block--#{$i} {
+		animation: progressif_card 800ms 200ms ease-in-out both;
+        animation-delay: #{$temps}ms;
     }
-@keyframes fadein{
+}    
+@keyframes progressif_card{
 	0%{
 	opacity: 0;
 	transform: translateY(20px);
@@ -119,3 +124,10 @@ i.fas.fa-arrow-left::before {
 	transform: translateY(0);
   }
 }  
+.button {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 29px;
+    background-color: #f2f2f2;
+}
