@@ -463,6 +463,12 @@ footer .footer__logo {
     object-fit: cover;
   }
 }
+@media all and (max-width: 767px) {
+  .container__image img {
+    max-height: 16em;
+    object-fit: cover;
+  }
+}
 
 .container__menu {
   background-color: #F2F2F2;
@@ -487,6 +493,23 @@ footer .footer__logo {
   .container__menu .menu {
     margin-left: 37px;
     margin-right: 37px;
+  }
+}
+@media all and (min-width: 992px) and (orientation: landscape) {
+  .container__menu .menu .menu__title {
+    margin-left: 37px;
+    margin-right: 37px;
+    position: relative;
+  }
+}
+@media all and (min-width: 768px) {
+  .container__menu .menu .menu__title {
+    position: relative;
+  }
+}
+@media all and (max-width: 767px) {
+  .container__menu .menu .menu__title {
+    position: relative;
   }
 }
 
@@ -531,7 +554,7 @@ footer .footer__logo {
   font-size: 20px;
   margin-bottom: 12px;
   width: 100%;
-  line-height: 0.4;
+  line-height: 0.8;
   font-size: 15px;
   display: flex;
   flex-direction: row;
@@ -545,7 +568,8 @@ footer .footer__logo {
   }
 }
 .menu__block--info .menu__block--price--meal {
-  margin: 0 3px -8px auto;
+  margin: 0;
+  margin-left: auto;
 }
 .menu__block--info .menu__block--title--contain {
   margin-left: 13px;
@@ -558,6 +582,7 @@ footer .footer__logo {
   display: flex;
   flex-direction: row;
   position: relative;
+  z-index: 34;
 }
 .menu__heart i.far.fa-heart {
   font-size: 30px;
@@ -567,6 +592,7 @@ footer .footer__logo {
   position: absolute;
   right: 20px;
   background: #f2f2f2;
+  z-index: 30;
 }
 .menu__heart i.far.fa-heart:hover {
   transition: opacity 350ms ease;
@@ -581,6 +607,28 @@ footer .footer__logo {
   display: initial;
   position: absolute;
   right: 20px;
+  z-index: 30;
+}
+@media all and (min-width: 992px) and (orientation: landscape) {
+  .menu__heart {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+@media all and (min-width: 768px) {
+  .menu__heart {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+@media all and (max-width: 767px) {
+  .menu__heart {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 .menu__block--title {
@@ -619,6 +667,10 @@ i.fas.fa-arrow-left::before {
   animation: rotation_validity 0.4s forwards;
 }
 
+.menu__block--info:hover .menu__block--title--contain {
+  animation: push_text 0.4s forwards;
+}
+
 .menu__block--confirm {
   width: 0px;
   overflow: hidden;
@@ -632,6 +684,14 @@ i.fas.fa-arrow-left::before {
     width: 50px;
   }
 }
+@keyframes push_text {
+  0% {
+    width: 90%;
+  }
+  100% {
+    width: 70%;
+  }
+}
 @keyframes rotation_validity {
   0% {
     transform: rotate(0deg);
@@ -641,15 +701,17 @@ i.fas.fa-arrow-left::before {
   }
 }
 .menu__block--confirm {
+  display: flex;
   background-color: #99E2D0;
   position: relative;
   height: 100%;
   margin-left: 1em;
   width: 0;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 41px;
+  padding-bottom: 41px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+  transform-origin: right;
 }
 .menu__block--confirm .menu__block--confirm:hover {
   width: 100%;
@@ -658,11 +720,33 @@ i.fas.fa-arrow-left::before {
 .menu__block--confirm i {
   color: white;
   font-size: 2em;
-  margin-left: 10px;
+  text-rendering: auto;
+  position: absolute;
+  right: 9px;
+  top: 25px;
 }
 .menu__block--confirm i .menu__block--confirm i:hover {
   transform: rotate(360deg);
   transition: 400ms linear;
+}
+
+.menu__block--title--contain {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu__block--title--contain .menu__block--title--meal {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu__block--title--contain .menu__block--contain--meal {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .menu__block--1 {

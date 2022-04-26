@@ -1,197 +1,264 @@
 .header {
+  display: flex;
+  width: 100%;
+  & .header__arrow {
     display: flex;
-    width: 100%;
-    & .header__arrow {
-        display: flex;
-        align-items: center;
-    }
-    & .header__logo {
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-    }
+    align-items: center;
+  }
+  & .header__logo {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
-    .header__logo > a{
-        text-decoration: none;
-        color: black;
-    & .header__logo .header__arrow {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+.header__logo > a {
+  text-decoration: none;
+  color: black;
+  & .header__logo .header__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .container__image {
-    display: block;
-    position: relative;
-    z-index: -1;
-    & img {
-        width: 100%;
-        @include tablette {
-            max-height: 18em;
-            object-fit: cover;
-        }
+  display: block;
+  position: relative;
+  z-index: -1;
+  & img {
+    width: 100%;
+    @include tablette {
+      max-height: 18em;
+      object-fit: cover;
     }
+    @include mobile {
+      max-height: 16em;
+      object-fit: cover;
+    }
+  }
 }
 .container__menu {
-    background-color: $background-other;
-    z-index: 1;
-    border-top-left-radius: 2em;
-    border-top-right-radius: 2em;
-    margin-top: -3em;
-    & .menu {
-        padding-top: 10px;
-        margin-left: 17px;
-        margin-right: 17px;
-        margin-bottom: -15px;
-        @include tablette {
-            margin-left: 80px;
-            margin-right: 80px;
-        }
-        @include pc {
-            margin-left: 37px;
-            margin-right: 37px;
-        }
+  background-color: $background-other;
+  z-index: 1;
+  border-top-left-radius: 2em;
+  border-top-right-radius: 2em;
+  margin-top: -3em;
+  & .menu {
+    padding-top: 10px;
+    margin-left: 17px;
+    margin-right: 17px;
+    margin-bottom: -15px;
+    @include tablette {
+      margin-left: 80px;
+      margin-right: 80px;
     }
+    @include pc {
+      margin-left: 37px;
+      margin-right: 37px;
+    }
+    & .menu__title {
+      @include pc {
+        margin-left: 37px;
+        margin-right: 37px;
+        position: relative;
+      }
+      @include tablette {
+        position: relative;
+      }
+      @include mobile {
+        position: relative;
+      }
+    }
+  }
 }
 .menu__name__resto {
-    font-family: $title-omf;
+  font-family: $title-omf;
 }
 .menu__block--1 .menu__block--2 .menu__block--3 {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 .menu__block--2 {
-    @include pc {
-        margin-left: 15px;
-        margin-right: 15px
-    }
+  @include pc {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 }
 .menu__block--contain--cards {
-    @include pc {
+  @include pc {
     display: flex;
     flex-direction: column;
-    }
+  }
 }
 .menu__3--blocks {
-    @include pc {
+  @include pc {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    }
+  }
 }
 .menu__block--info {
-    @include card_menu;
-    width: 100%;
-    line-height: 0.4;
-    font-size: 15px;
+  @include card_menu;
+  width: 100%;
+  line-height: 0.8;
+  font-size: 15px;
+  display: flex;
+  flex-direction: row;
+  @include pc {
     display: flex;
-    flex-direction: row;
-    @include pc {
-        display: flex;
-        margin-left: 10px;
-        margin-right: 10px;
-        width: 100%;
-    }
-    .menu__block--price--meal {
-        margin: 0 3px -8px auto;
-    }
-    .menu__block--title--contain {
-        margin-left: 13px;
-    }
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100%;
+  }
+  .menu__block--price--meal {
+    margin: 0;
+    margin-left: auto;
+  }
+  .menu__block--title--contain {
+    margin-left: 13px;
+  }
 }
 .menu__heart {
-    @include heart_menu
+  @include heart_menu;
+  @include pc {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  @include tablette {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  @include mobile {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 .menu__block--title {
-    font-size: 16px;
-    color: #4e4a4a;
-    border-bottom: 3px solid $color-tertiary;
-    line-height: 31px;
-    @include mobile {
-        width: 5%;
-    }
-    @include tablette {
-        width: 5%;
-    }
-    @include pc {
-        width: 11%;
-    }
+  font-size: 16px;
+  color: #4e4a4a;
+  border-bottom: 3px solid $color-tertiary;
+  line-height: 31px;
+  @include mobile {
+    width: 5%;
+  }
+  @include tablette {
+    width: 5%;
+  }
+  @include pc {
+    width: 11%;
+  }
 }
 i.fas.fa-arrow-left::before {
-    color: black;
-    margin-left: 30px;
+  color: black;
+  margin-left: 30px;
 }
 .menu__block--info:hover .menu__block--confirm {
-    animation: slide_left .4s forwards;
-    animation-direction: alternate;
+  animation: slide_left 0.4s forwards;
+  animation-direction: alternate;
 }
 .menu__block--info:hover .menu__block--confirm i {
-    animation: rotation_validity .4s forwards;
+  animation: rotation_validity 0.4s forwards;
+}
+.menu__block--info:hover .menu__block--title--contain {
+  animation: push_text 0.4s forwards;
 }
 .menu__block--confirm {
-    width: 0px;
-    overflow: hidden;
+  width: 0px;
+  overflow: hidden;
 }
 @keyframes slide_left {
-    0% {
-        width: 0px;
-    }
-    100% {
-        width: 50px;
-    }
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 50px;
+  }
+}
+@keyframes push_text {
+  0% {
+    width: 90%;
+  }
+  100% {
+    width: 70%;
+  }
 }
 @keyframes rotation_validity {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .menu__block--confirm {
-    background-color: $color-tertiary;
-    position: relative;
-    height: 100%;
-    margin-left: 1em;
-    width: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    & .menu__block--confirm:hover {
+  display: flex;
+  background-color: $color-tertiary;
+  position: relative;
+  height: 100%;
+  margin-left: 1em;
+  width: 0;
+  padding-top: 41px;
+  padding-bottom: 41px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transform-origin: right;
+  & .menu__block--confirm:hover {
     width: 100%;
-    }
-}    
-.menu__block--confirm  i {
-    color: white;
-    font-size: 2em;
-    margin-left: 10px;
-    & .menu__block--confirm i:hover {
-        transform: rotate(360deg);
-        transition: 400ms linear;
-    }
-} 
-@for $i from 1 through 3 {
-    $temps: 500*$i;
-    .menu__block--#{$i} {
-		animation: progressif_card 800ms 200ms ease-in-out both;
-        animation-delay: #{$temps}ms;
-    }
-}    
-@keyframes progressif_card{
-	0%{
-	opacity: 0;
-	transform: translateY(20px);
-	}
-  100%{
-	opacity: 1;
-	transform: translateY(0);
   }
-}  
+}
+.menu__block--confirm i {
+  color: white;
+  font-size: 2em;
+  text-rendering: auto;
+  position: absolute;
+  right: 9px;
+  top: 25px;
+  & .menu__block--confirm i:hover {
+    transform: rotate(360deg);
+    transition: 400ms linear;
+  }
+}
+.menu__block--title--contain {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  & .menu__block--title--meal {
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  & .menu__block--contain--meal {
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+@for $i from 1 through 3 {
+  $temps: 500 * $i;
+  .menu__block--#{$i} {
+    animation: progressif_card 800ms 200ms ease-in-out both;
+    animation-delay: #{$temps}ms;
+  }
+}
+@keyframes progressif_card {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .button {
-    display: flex;
-    justify-content: center;
-    padding-top: 29px;
-    padding-bottom: 29px;
-    background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  padding-top: 29px;
+  padding-bottom: 29px;
+  background-color: #f2f2f2;
 }
