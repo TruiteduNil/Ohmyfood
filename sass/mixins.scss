@@ -248,11 +248,6 @@
     @content;
   }
 }
-@mixin mobile {
-  @media all and (max-width: map-get($breakpoints,mobile)) {
-    @content;
-  }
-}
 @mixin pc {
   @media all and (min-width: map-get($breakpoints,pc)) and (orientation: landscape) {
     @content;

@@ -71,7 +71,7 @@ body {
 .localisation {
   display: flex;
   justify-content: center;
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
   padding: 25px;
   box-shadow: inset 0px 14px 14px -9px rgba(0, 0, 0, 0.26);
 }
@@ -83,7 +83,7 @@ body {
   margin-right: 10px;
 }
 .localisation ::placeholder {
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
   color: #4e4a4a;
   outline: none;
 }
@@ -99,7 +99,7 @@ body {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
 }
 .container__reservation .reservation__title {
   margin-left: 36px;
@@ -157,7 +157,7 @@ body {
   transition: 350ms;
 }
 .fonction__protocole--1:hover .fas {
-  color: #9356DC;
+  color: #9356dc;
   font-size: 16px;
   padding-left: 20px;
   padding-right: 10px;
@@ -194,7 +194,7 @@ body {
   transition: 350ms;
 }
 .fonction__protocole--2:hover .fas {
-  color: #9356DC;
+  color: #9356dc;
   font-size: 16px;
   padding-left: 20px;
   padding-right: 10px;
@@ -229,7 +229,7 @@ body {
   transition: 350ms;
 }
 .fonction__protocole--3:hover .fas {
-  color: #9356DC;
+  color: #9356dc;
   font-size: 16px;
   padding-left: 20px;
   padding-right: 10px;
@@ -243,7 +243,7 @@ body {
 
 .fonction__protocole--numero {
   align-items: center;
-  background: #9356DC;
+  background: #9356dc;
   border-radius: 30px;
   color: #f6f6f6;
   display: flex;
@@ -277,7 +277,7 @@ button:hover {
 }
 
 .container__restaurants {
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   padding-bottom: 25px;
 }
 .container__restaurants .restaurants__title {
@@ -315,22 +315,18 @@ button:hover {
   position: relative;
   overflow: hidden;
   box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.53);
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 .restaurant__card .restaurant__card--img > img {
   width: 100%;
   height: 175px;
   object-fit: cover;
 }
-@media all and (max-width: 767px) {
-  .restaurant__card {
-    width: 100%;
-    margin-top: 25px;
-    margin-bottom: 25px;
-  }
-}
 
 .restaurant__card--new {
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   color: #008766;
   font-weight: bold;
   position: absolute;
@@ -456,22 +452,12 @@ footer .footer__logo {
 }
 .container__image img {
   width: 100%;
-}
-@media all and (min-width: 768px) {
-  .container__image img {
-    max-height: 18em;
-    object-fit: cover;
-  }
-}
-@media all and (max-width: 767px) {
-  .container__image img {
-    max-height: 16em;
-    object-fit: cover;
-  }
+  max-height: 16em;
+  object-fit: cover;
 }
 
 .container__menu {
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   z-index: 1;
   border-top-left-radius: 2em;
   border-top-right-radius: 2em;
@@ -483,32 +469,19 @@ footer .footer__logo {
   margin-right: 17px;
   margin-bottom: -15px;
 }
-@media all and (min-width: 768px) {
-  .container__menu .menu {
-    margin-left: 80px;
-    margin-right: 80px;
-  }
-}
 @media all and (min-width: 992px) and (orientation: landscape) {
   .container__menu .menu {
     margin-left: 37px;
     margin-right: 37px;
   }
 }
+.container__menu .menu .menu__title {
+  position: relative;
+}
 @media all and (min-width: 992px) and (orientation: landscape) {
   .container__menu .menu .menu__title {
     margin-left: 37px;
     margin-right: 37px;
-    position: relative;
-  }
-}
-@media all and (min-width: 768px) {
-  .container__menu .menu .menu__title {
-    position: relative;
-  }
-}
-@media all and (max-width: 767px) {
-  .container__menu .menu .menu__title {
     position: relative;
   }
 }
@@ -577,6 +550,9 @@ footer .footer__logo {
 
 .menu__heart {
   font-size: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .menu__heart .menu__title + .menu__heart {
   display: flex;
@@ -616,36 +592,13 @@ footer .footer__logo {
     right: 0;
   }
 }
-@media all and (min-width: 768px) {
-  .menu__heart {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-}
-@media all and (max-width: 767px) {
-  .menu__heart {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-}
 
 .menu__block--title {
   font-size: 16px;
   color: #4e4a4a;
-  border-bottom: 3px solid #99E2D0;
+  border-bottom: 3px solid #99e2d0;
   line-height: 31px;
-}
-@media all and (max-width: 767px) {
-  .menu__block--title {
-    width: 5%;
-  }
-}
-@media all and (min-width: 768px) {
-  .menu__block--title {
-    width: 5%;
-  }
+  width: 5%;
 }
 @media all and (min-width: 992px) and (orientation: landscape) {
   .menu__block--title {
@@ -702,7 +655,7 @@ i.fas.fa-arrow-left::before {
 }
 .menu__block--confirm {
   display: flex;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   position: relative;
   height: 100%;
   margin-left: 1em;
